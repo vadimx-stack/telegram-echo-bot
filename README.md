@@ -1,102 +1,114 @@
-# 🤖 Профессиональный Telegram Бот
+# 🤖 Professional Telegram Bot
+
+[![English](https://img.shields.io/badge/Language-English-blue)](README.md)
+[![Russian](https://img.shields.io/badge/Language-Russian-green)](README.ru.md)
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![python-telegram-bot](https://img.shields.io/badge/python--telegram--bot-v20%2B-green)
 
-Профессиональный, масштабируемый и чистый проект Telegram бота с использованием современного асинхронного подхода на Python. Этот проект демонстрирует лучшие практики разработки Telegram ботов и может служить основой для создания более сложных ботов.
+A professional, scalable, and clean Telegram bot project using a modern asynchronous approach in Python. This project demonstrates best practices for Telegram bot development and can serve as a foundation for creating more complex bots.
 
-## ✨ Особенности
+## ✨ Features
 
-- ⚡ Асинхронная архитектура с использованием `python-telegram-bot` v20+
-- 🧩 Модульная структура проекта, готовая к расширению
-- 🔐 Поддержка переменных окружения через `.env` для хранения токена бота
-- 📝 Полная типизация с использованием аннотаций типов Python
-- 🛡️ Встроенная система логирования с записью в файл и консоль
-- 🔄 Корректная обработка сигналов завершения
+- ⚡ Asynchronous architecture using `python-telegram-bot` v20+
+- 🧩 Modular project structure, ready for extension
+- 🔐 Environment variable support via `.env` for bot token storage
+- 📝 Full typing with Python type annotations
+- 🛡️ Built-in logging system with file and console output
+- 🔄 Proper termination signal handling
 
-## 📋 Команды бота
+## 📋 Bot Commands
 
-- `/start` - Начальное приветствие и информация о боте
-- `/help` - Список доступных команд и инструкции
-- Эхо-ответы на все текстовые сообщения
+- `/start` - Initial greeting and bot information
+- `/help` - List of available commands and instructions
+- Echo responses to all text messages
 
-## 🚀 Установка и запуск
+## 🚀 Installation and Launch
 
-### Предварительные требования
+### Prerequisites
 
-- Python 3.9 или выше
-- pip (менеджер пакетов Python)
+- Python 3.9 or higher
+- pip (Python package manager)
 
-### Настройка проекта
+### Project Setup
 
-1. Создайте и активируйте виртуальное окружение:
+1. Clone the repository:
 ```bash
-python -m venv venv
-# Для Windows
-venv\Scripts\activate
+git clone https://github.com/username/telegram-bot-framework.git
+cd telegram-bot-framework
 ```
 
-2. Установите зависимости:
+2. Create and activate a virtual environment:
+```bash
+python -m venv venv
+# For Windows
+venv\Scripts\activate
+# For macOS/Linux
+source venv/bin/activate
+```
+
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Создайте файл `.env` на основе `.env.example`:
+4. Create a `.env` file based on `.env.example`:
 ```bash
 cp .env.example .env
 ```
 
-4. Отредактируйте файл `.env` и добавьте ваш токен бота:
+5. Edit the `.env` file and add your bot token:
 ```
-TELEGRAM_BOT_TOKEN=token
+TELEGRAM_BOT_TOKEN=your_telegram_bot_token
 ```
 
-### Запуск бота
+### Running the Bot
 
 ```bash
 python main.py
 ```
 
-## 🏗️ Структура проекта
+## 🏗️ Project Structure
 
 ```
-telegram-bot/
+telegram-bot-framework/
 ├── bot/
 │   ├── handlers/
 │   │   ├── __init__.py
-│   │   ├── command_handlers.py    # Обработчики команд (/start, /help)
-│   │   └── message_handlers.py    # Обработчики сообщений (эхо)
+│   │   ├── command_handlers.py    # Command handlers (/start, /help)
+│   │   └── message_handlers.py    # Message handlers (echo)
 │   ├── utils/
 │   │   ├── __init__.py
-│   │   ├── config.py              # Загрузка конфигурации из .env
-│   │   └── logger.py              # Настройка логирования
+│   │   ├── config.py              # Loading configuration from .env
+│   │   └── logger.py              # Logging setup
 │   ├── __init__.py
-│   └── bot.py                     # Основной класс бота
-├── logs/                          # Каталог с логами (создаётся автоматически)
-├── .env                           # Файл с переменными окружения (не включен в репозиторий)
-├── .env.example                   # Пример файла с переменными окружения
-├── .gitignore                     # Файлы и каталоги, исключенные из репозитория
-├── main.py                        # Точка входа в приложение
-├── README.md                      # Документация проекта
-└── requirements.txt               # Зависимости проекта
+│   └── bot.py                     # Main bot class
+├── logs/                          # Log directory (created automatically)
+├── .env                           # Environment variables file (not included in repo)
+├── .env.example                   # Example environment variables file
+├── .gitignore                     # Files and directories excluded from the repo
+├── main.py                        # Application entry point
+├── README.md                      # Project documentation (English)
+├── README.ru.md                   # Project documentation (Russian)
+└── requirements.txt               # Project dependencies
 ```
 
-## 🛠️ Расширение функциональности
+## 🛠️ Extending Functionality
 
-Проект имеет модульную структуру, что упрощает расширение его функциональности:
+The project has a modular structure that simplifies extending its functionality:
 
-1. Добавьте новые обработчики команд в `bot/handlers/command_handlers.py`
-2. Добавьте обработчики новых типов сообщений в `bot/handlers/message_handlers.py`
-3. Зарегистрируйте новые обработчики в методе `register_handlers()` класса `TelegramBot`
+1. Add new command handlers in `bot/handlers/command_handlers.py`
+2. Add handlers for new message types in `bot/handlers/message_handlers.py`
+3. Register new handlers in the `register_handlers()` method of the `TelegramBot` class
 
-## 📄 Лицензия
+## 📄 License
 
-Этот проект распространяется под лицензией MIT. Подробности смотрите в файле LICENSE.
+This project is distributed under the MIT license. See the LICENSE file for details.
 
-## 📬 Контакты
+## 📬 Contact
 
-Если у вас есть вопросы или предложения, не стесняйтесь создавать issue или pull request.
+If you have any questions or suggestions, feel free to create an issue or pull request.
 
 ---
 
-⭐ **Не забудьте поставить звезду, если вам понравился проект!** ⭐ 
+⭐ **Don't forget to star the project if you liked it!** ⭐ 
